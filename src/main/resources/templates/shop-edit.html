@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{default}">
+<head>
+</head>
+<body>
+<div layout:fragment="content">
+    <div th:text="${errors}" class="margin-bottom alert-danger"></div>
+    <form action="#" th:action="@{/shop/{id}(id=${id})}" th:object="${shopDto}" method="post">
+        <div class="mb-3">
+            <label for="nameProduct" class="form-label">Название продукта</label>
+            <input type="text" class="form-control" id="nameProduct" th:field="${shopDto.nameProduct}" required="true">
+        </div>
+        <div class="mb-3">
+            <label for="typeOrder" class="form-label">Тип заказа</label>
+            <input type="text" class="form-control" id="typeOrder" th:field="${shopDto.typeOrder}" required="true">
+        </div>
+        <div class="mb-3">
+            <label for="cost" class="form-label">Цена</label>
+            <input type="int" class="form-control" id="cost" th:field="${shopDto.cost}" required="true">
+        </div>
+        <div class="mb-3">
+            <label for="customer_id" class="form-label">Покупатель</label>
+            <input type="int" class="form-control" id="customer_id" th:field="${shopDto.customer_id}" required="true">
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary button-fixed">
+                <span th:if="${id == null}">Добавить</span>
+                <span th:if="${id != null}">Обновить</span>
+            </button>
+            <a class="btn btn-secondary button-fixed" th:href="@{/customer}">
+                Назад
+            </a>
+        </div>
+    </form>
+</div>
+</body>
+</html>
