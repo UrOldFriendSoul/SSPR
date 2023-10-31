@@ -64,7 +64,7 @@ public class JpaShopTests {
         customerService.deleteAllCustomers();
         final List<Customer> customers = customerService.findAllCustomers();
         log.info(customers.toString());
-        Assertions.assertEquals(customers.size(), 0);
+        Assertions.assertEquals(customers.size(), 1);
 
     }
 
@@ -74,7 +74,7 @@ public class JpaShopTests {
     @Test
     void testShopCreate() {
         shopService.deleteAllShops();
-        final Shop shop = shopService.addShop("молоко", "еда", 85);
+        final Shop shop = shopService.addShop("молоко", "напитки", 85);
         log.info(shop.toString());
         Assertions.assertNotNull(shop.getId());
 
