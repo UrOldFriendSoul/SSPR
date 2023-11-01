@@ -64,7 +64,7 @@ public class JpaShopTests {
         customerService.deleteAllCustomers();
         final List<Customer> customers = customerService.findAllCustomers();
         log.info(customers.toString());
-        Assertions.assertEquals(customers.size(), 1);
+        Assertions.assertEquals(customers.size(), 0);
 
     }
 
