@@ -27,7 +27,7 @@
     <script>
         $(document).ready(function () {
             $.ajax({
-                url: "http://localhost:8080/api/customer/"
+                url: "http://localhost:8081/api/customer/"
             }).then(function (data) {
                 $.each(data, function (index, value) {
                     const row = $("<tr>");
